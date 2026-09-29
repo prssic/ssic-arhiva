@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arhivă foto | SSIC</title>
+  <meta name="description" content="Arhivă de galerii foto SSIC – amintiri din evenimentele noastre.">
+  <meta http-equiv="refresh" content="0; url=https://ssic.ro/galerii/">
+  <link rel="canonical" href="https://ssic.ro/galerii/">
+  <link rel="icon" href="https://ssic.ro/assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+      background: #0c2340;
+      color: #f5f4e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 28px;
+      display: block;
+    }
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 1rem;
+      opacity: .7;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: #f5f4e0;
+      color: #0c2340;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: 14px;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.3);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+    .note {
+      margin-top: 20px;
+      font-size: .82rem;
+      opacity: .4;
+    }
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 32px;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    .dot:nth-child(1) { background: #ff3399; animation-delay: 0s; }
+    .dot:nth-child(2) { background: #33ccff; animation-delay: .2s; }
+    .dot:nth-child(3) { background: #ccff33; animation-delay: .4s; }
+    @keyframes pulse { 0%, 80%, 100% { transform: scale(.8); opacity: .5; } 40% { transform: scale(1.2); opacity: 1; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="https://ssic.ro/assets/logo/favicon.png" alt="SSIC logo">
+    <h1>Arhivă foto SSIC</h1>
+    <p>Galeriile foto ale asociației se află pe site-ul oficial.<br>Te redirecționăm acum…</p>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <a class="btn" href="https://ssic.ro/galerii/">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      Vezi toate galeriile
+    </a>
+    <p class="note">prssic.github.io/ssic-arhiva → ssic.ro/galerii</p>
+  </div>
+  <script>
+    // Redirect imediat dacă meta refresh e blocat de browser
+    setTimeout(function() {
+      window.location.replace('https://ssic.ro/galerii/');
+    }, 100);
+  </script>
+</body>
+</html>
