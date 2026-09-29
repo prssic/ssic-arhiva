@@ -1,26 +1,7 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <script>
-        /* Temă site-wide: "clasic" (implicit) sau "discover" (clasa ds-theme pe <html>).
-           Aplicată aici, înainte de orice CSS/randare, ca să nu existe flash la încărcare. */
-        /* COMUTATOR TEMĂ: activ DOAR până duminică, 4 oct. 2026, 00:00 (ora României). După aceea
-           butonul din footer dispare, popup-ul nu mai apare, iar tema Discover salvată e ignorată
-           (toți vizitatorii revin pe clasic). Ca să-l oprești/pornești manual: pune `false`/`true`. */
-        window.SSIC_THEME_SWITCH = Date.now() < Date.parse('2026-10-04T00:00:00+03:00');
-        /* COMUTATOR SECRET: 13 click-uri rapide pe poza lui Constantin Alexandru (Board) schimbă tema
-           (vezi JS-ul temei, mai jos) și „deblochează" persistența (ssicThemeUnlocked) doar pe
-           browserul respectiv: butonul public rămâne ascuns, ceilalți vizitatori nu văd nicio schimbare. */
-        (function () {
-            var root = document.documentElement;
-            var unlocked = false;
-            try { unlocked = localStorage.getItem('ssicThemeUnlocked') === '1'; } catch (e) { /* ignorăm */ }
-            if (!window.SSIC_THEME_SWITCH) root.classList.add('no-theme-switch');
-            if (!window.SSIC_THEME_SWITCH && !unlocked) return;
-            try { if (localStorage.getItem('ssicTheme') === 'discover') root.classList.add('ds-theme'); }
-            catch (e) { /* ignorăm */ }
-        })();
-    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Discover SSIC - Ziua 1 | Arhiva SSIC</title>
@@ -28,12 +9,12 @@
     <link rel="canonical" href="">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/logo/favicon.png">
+    <link rel="icon" type="image/png" href="https://ssic.ro/assets/logo/favicon.png">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Discover SSIC - Ziua 1 | Arhiva SSIC">
     <meta property="og:description" content="Pozele realizate în cadrul Discover SSIC - Prezentare SSIC - Jocuri de cunoaștere">
-    <meta property="og:image" content="/assets/logo/banner.png">
+    <meta property="og:image" content="https://ssic.ro/assets/logo/banner.png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
 
@@ -2901,34 +2882,14 @@
 
     <!-- Nav (Frosted Glass) -->
     <nav>
-        <div class="nav-backdrop" aria-hidden="true">
-            <div class="nav-glass-blur"></div>
-        </div>
-        <a class="logo hover-target" href="/" style="text-decoration:none;">
-            
-            <img src="/assets/logo/ssic-logo.png" alt="SSIC – Societatea Studenților în Inginerie Chimică și Biotehnologii">
-        </a>
-        <ul class="nav-links" id="navLinks">
-            <li><a class="nav-link hover-target active" data-target="home" href="/">Acasă</a></li>
-            <li><a class="nav-link hover-target active" data-target="avizier" href="/avizier/">Avizier</a></li>
-            <li><a class="nav-link hover-target active" data-target="evenimente" href="/evenimente/">Evenimente</a></li>
-            <li><a class="nav-link hover-target active" data-target="board" href="/board/">Board</a></li>
-            <li><a class="nav-link hover-target active" data-target="facultate" href="/facultate/">Facultate</a></li>
-            <li><a class="nav-link hover-target active" data-target="studenti" href="/studenti/">Studenți</a></li>
-            <li><a class="nav-link hover-target active" data-target="galerie" href="/galerie/">Galerie</a></li>
-        </ul>
-        <div class="nav-right">
-            <button class="nav-search-btn hover-target" id="navSearchBtn" aria-label="Caută în site" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchOverlay">
-                <i data-lucide="search"></i>
-            </button>
-            <button class="nav-theme-btn hover-target" id="navThemeBtn" aria-label="Schimbă tema: clasic sau Discover SSIC" aria-pressed="false" title="Schimbă tema">
-                <i data-lucide="palette"></i>
-            </button>
-            <button class="nav-burger hover-target" id="navBurger" aria-label="Deschide meniul" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <div class="nav-backdrop" aria-hidden="true"><div class="nav-glass-blur"></div></div>
+    <a class="logo hover-target" href="https://ssic.ro" style="text-decoration:none;">
+        <img src="https://ssic.ro/assets/logo/ssic-logo.png" alt="SSIC">
+    </a>
+    <ul class="nav-links">
+        <li><a class="arhiva-btn hover-target" href="https://ssic.ro/" style="padding: 10px 24px; font-size: 0.95rem; display: inline-flex; margin-left: 20px;">Înapoi la site</a></li>
+    </ul>
+</nav>
 
     <!-- ================= SEARCH OVERLAY (Command Palette) ================= -->
     <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Căutare în site">
@@ -4109,6 +4070,10 @@
                 }
                 </script>
             </div>
+            <footer class="global-footer">`
+            <div class="footer-grid">
+                <div class="ft-col">
+                    <div style="display:flex</footer>
         </section>
     
     </main>
