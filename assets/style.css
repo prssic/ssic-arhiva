@@ -1,4 +1,3 @@
-
 /* === OVERRIDES ARHIVA === */
 .arhiva-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; padding: 20px 0; }
 .arhiva-card { background: var(--c-surface-elevated, #180f24); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid rgba(255,255,255,0.05); }
