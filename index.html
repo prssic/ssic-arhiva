@@ -2816,7 +2816,49 @@
         @media (prefers-reduced-motion: reduce) { .ds-countdown { rotate: none; } }
     </style>
 <link rel="stylesheet" href="/assets/style.css">
-    <style>html, body { overflow-y: auto !important; height: auto !important; overflow-x: hidden; } html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; } body { -ms-overflow-style: none; scrollbar-width: none; } .view { position: relative !important; height: auto !important; overflow: visible !important; }</style>
+<style id="arhiva-inline">
+/* === OVERRIDES ARHIVA === */
+.arhiva-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; padding: 20px 0; }
+.arhiva-card { background: var(--c-surface-elevated, #180f24); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid rgba(255,255,255,0.05); }
+.arhiva-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.arhiva-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.arhiva-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.arhiva-title { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--c-white); line-height: 1.2; }
+.arhiva-meta { font-size: 0.9rem; opacity: 0.7; }
+.arhiva-btn { background: var(--c-accent); color: var(--c-base); padding: 12px 24px; border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer; font-family: var(--font-main); transition: filter 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 1.05rem; }
+.arhiva-btn:hover { filter: brightness(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
+.arhiva-poza-item { position: relative; border-radius: 12px; overflow: hidden; background: var(--c-surface); margin-bottom: 16px; display: inline-block; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.arhiva-poza-item img { width: 100%; height: auto; display: block; cursor: zoom-in; }
+.arhiva-dl-overlay { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.75); color: #fff; padding: 10px; border-radius: 10px; text-decoration: none; display: flex; opacity: 0; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.arhiva-poza-item:hover .arhiva-dl-overlay { opacity: 1; }
+.arhiva-dl-overlay:hover { background: var(--c-accent); color: var(--c-base); transform: scale(1.05); }
+.masonry-col { column-count: 3; column-gap: 16px; }
+@media (max-width: 900px) { .masonry-col { column-count: 2; } }
+@media (max-width: 600px) { .masonry-col { column-count: 1; } }
+
+/* === ARHIVĂ: galerie de poze (folosește lightbox-ul nativ al site-ului) === */
+.gallery-grid.arhiva-gallery { column-count: 2; column-width: auto; column-gap: 12px; margin-top: 24px; }
+@media (min-width: 640px)  { .gallery-grid.arhiva-gallery { column-count: 3; column-gap: 16px; } }
+@media (min-width: 1000px) { .gallery-grid.arhiva-gallery { column-count: 4; column-gap: 20px; } }
+/* .gal-item din site presupune --aspect + iconiță FontAwesome; aici pozele își au propriul raport */
+.arhiva-gallery .gal-item { display: block; margin-bottom: 12px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; }
+@media (min-width: 640px) { .arhiva-gallery .gal-item { margin-bottom: 16px; } }
+.arhiva-gallery .gal-item::before, .arhiva-gallery .gal-item::after { display: none; }
+.arhiva-gallery .gal-item img { position: static; display: block; width: 100%; height: auto; aspect-ratio: auto 3 / 2; object-fit: cover; cursor: pointer; }
+
+/* === Lightbox (al site-ului): fără scroll în spate pe mobil + buton de descărcare peste poză === */
+html.lb-open, html.lb-open body { overflow: hidden !important; }
+.lb-overlay { overscroll-behavior: contain; }
+.lb-dl { position: absolute; z-index: 3; width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; background: rgba(20,13,30,0.72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: background 0.2s, color 0.2s; -webkit-tap-highlight-color: transparent; }
+.lb-dl[hidden] { display: none; }
+.lb-dl:hover { background: var(--c-accent); color: #14091f; }
+.lb-dl svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+html.ds-theme .lb-dl { background: var(--c-base); color: var(--ds-navy); border-radius: 14px; box-shadow: 0 0 0 2.5px var(--ds-navy), 3px 3px 0 2.5px var(--ds-navy); }
+html.ds-theme .lb-dl:hover { background: var(--ds-pink); }
+
+</style>
+    <style>html, body { overflow-y: auto !important; height: auto !important; overflow-x: hidden; } html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; } body { -ms-overflow-style: none; scrollbar-width: none; } .view { position: relative !important; height: auto !important; overflow: visible !important; }
+.app { height: auto !important; min-height: 100vh; min-height: 100dvh; overflow: visible !important; }</style>
 </head>
 <body>
 
@@ -3861,7 +3903,7 @@
                     <p style="font-size: 1.1rem; opacity: 0.7; margin-bottom: 40px;">Toate fotografiile de la evenimentele noastre trecute, disponibile exclusiv pentru descărcare și arhivare.</p>
                     <div class="arhiva-grid">
         <a class="arhiva-card" href="/discover-ziua-1/">
-            <img class="arhiva-thumb" src="/discover-ziua-1/f/BGD_0251-2.jpg" alt="" loading="lazy">
+            <img class="arhiva-thumb" src="/discover-ziua-1/m/BGD_0251-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0251-2.jpg'" decoding="async" alt="" loading="lazy">
             <div class="arhiva-body">
                 <div class="arhiva-title">Discover SSIC - Ziua 1</div>
                 <div class="arhiva-meta">28.09.2026 &bull; 24 poze</div>
