@@ -23,7 +23,9 @@
             <li><a class="nav-link hover-target" href="https://ssic.ro/galerie/">Galerie</a></li>
         </ul>
     </nav>
-    <main class="page-content" style="padding-top:120px; min-height:100vh;">
+    <main class="app">
+        <section class="view active" style="position:relative; opacity:1; visibility:visible; pointer-events:auto; display:block; overflow:visible;">
+            <div class="page-content" style="padding-top:120px; min-height:100vh;">
 
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 5vw;">
         <h1 class="title-huge" style="margin-bottom: 10px;"><i>Arhiva</i> Foto</h1>
@@ -31,9 +33,34 @@
         <p style="opacity:0.5">Nicio galerie momentan.</p>
     </div>
     
-    </main>
-    <footer class="global-footer" style="padding: 40px 5vw; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
+            </div>
+            <footer class="global-footer" style="padding: 40px 5vw; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
         <p style="opacity: 0.5; font-size: 0.9rem;">&copy; SSIC &mdash; Arhiva Foto</p>
     </footer>
+        </section>
+    </main>
+    <div class="cursor" id="cursor"></div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        const supportsRealCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        if (supportsRealCursor && cursor) {
+            let mX = window.innerWidth/2, mY = window.innerHeight/2;
+            let cX = mX, cY = mY;
+            function loopCursor() {
+                cX += (mX - cX) * 0.2;
+                cY += (mY - cY) * 0.2;
+                cursor.style.transform = 	ranslate(calc(px - 50%), calc(px - 50%));
+                requestAnimationFrame(loopCursor);
+            }
+            loopCursor();
+            window.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
+        }
+        document.addEventListener('mouseover', e => {
+            if (e.target.closest('a, button, .hover-target, .arhiva-poza-item img, .arhiva-btn, .lb-btn')) cursor.classList.add('hovering');
+        });
+        document.addEventListener('mouseout', e => {
+            if (e.target.closest('a, button, .hover-target, .arhiva-poza-item img, .arhiva-btn, .lb-btn')) cursor.classList.remove('hovering');
+        });
+    </script>
 </body>
 </html>
