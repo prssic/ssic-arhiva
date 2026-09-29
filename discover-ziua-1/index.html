@@ -2818,6 +2818,10 @@
 <link rel="stylesheet" href="/assets/style.css">
     <style>html, body { overflow-y: auto !important; height: auto !important; overflow-x: hidden; } html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; } body { -ms-overflow-style: none; scrollbar-width: none; } .view { position: relative !important; height: auto !important; overflow: visible !important; }</style>
 <style id="arhiva-gallery-fix">
+/* FIX: grila de fundal (.app) trebuie să acopere toată înălțimea paginii, inclusiv footerul */
+html, body { background-color: var(--c-base); }
+.app { background-attachment: scroll !important; min-height: 100vh; }
+.app .global-footer { position: relative; z-index: 1; }
 /* FIX: .gal-item din site are ::before cu padding-top = var(--aspect) (nedefinit aici => înălțime 0),
    iar img e position:absolute => pozele erau invizibile. Aici pozele își au propria înălțime. */
 .gallery-grid { columns: auto !important; column-count: 1 !important; column-gap: 20px !important; margin-top: 24px; }
@@ -3872,7 +3876,7 @@
                 <div style="max-width: 1700px; margin: 0 auto; padding: 0 5vw;">
                     <a href="/" style="display:inline-block; margin-bottom:20px; color:var(--c-accent); text-decoration:none; font-weight:600; font-size:1.05rem;">&larr; Toate galeriile</a>
                     <h1 class="title-huge" style="margin-bottom: 10px; font-size: clamp(2.4rem, 5.2vw, 4.4rem);"><i>Discover SSIC - Ziua 1</i></h1>
-                    <p style="font-size: 1.1rem; opacity: 0.7; margin-bottom: 20px; color: var(--c-accent);">28.09.2026 &bull; 24 poze</p>
+                    <p style="font-size: 1.1rem; opacity: 0.7; margin-bottom: 20px; color: var(--c-accent);">28.09.2026 &bull; 23 poze</p>
                     <p style="font-size: 1.15rem; margin-bottom: 30px; max-width: 700px; line-height: 1.6;">Pozele realizate în cadrul Discover SSIC - Prezentare SSIC - Jocuri de cunoaștere</p><div class="gallery-grid" data-no-lightbox>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
             <img src="/discover-ziua-1/m/BGD_0251-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0251-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(0)">
@@ -3887,138 +3891,133 @@
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0254-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0254-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(2)">
-            <a href="/discover-ziua-1/f/BGD_0254-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </a>
-        </div>
-        <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0263-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0263-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(3)">
+            <img src="/discover-ziua-1/m/BGD_0263-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0263-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(2)">
             <a href="/discover-ziua-1/f/BGD_0263-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0265-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0265-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(4)">
+            <img src="/discover-ziua-1/m/BGD_0265-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0265-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(3)">
             <a href="/discover-ziua-1/f/BGD_0265-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0266-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0266-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(5)">
+            <img src="/discover-ziua-1/m/BGD_0266-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0266-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(4)">
             <a href="/discover-ziua-1/f/BGD_0266-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0267-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0267-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(6)">
+            <img src="/discover-ziua-1/m/BGD_0267-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0267-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(5)">
             <a href="/discover-ziua-1/f/BGD_0267-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0225.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0225.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(7)">
+            <img src="/discover-ziua-1/m/BGD_0225.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0225.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(6)">
             <a href="/discover-ziua-1/f/BGD_0225.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0227.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0227.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(8)">
+            <img src="/discover-ziua-1/m/BGD_0227.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0227.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(7)">
             <a href="/discover-ziua-1/f/BGD_0227.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0228.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0228.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(9)">
+            <img src="/discover-ziua-1/m/BGD_0228.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0228.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(8)">
             <a href="/discover-ziua-1/f/BGD_0228.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0229.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0229.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(10)">
+            <img src="/discover-ziua-1/m/BGD_0229.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0229.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(9)">
             <a href="/discover-ziua-1/f/BGD_0229.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0231-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0231-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(11)">
+            <img src="/discover-ziua-1/m/BGD_0231-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0231-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(10)">
             <a href="/discover-ziua-1/f/BGD_0231-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0234-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0234-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(12)">
+            <img src="/discover-ziua-1/m/BGD_0234-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0234-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(11)">
             <a href="/discover-ziua-1/f/BGD_0234-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0237.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0237.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(13)">
+            <img src="/discover-ziua-1/m/BGD_0237.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0237.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(12)">
             <a href="/discover-ziua-1/f/BGD_0237.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0240-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0240-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(14)">
+            <img src="/discover-ziua-1/m/BGD_0240-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0240-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(13)">
             <a href="/discover-ziua-1/f/BGD_0240-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0241-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0241-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(15)">
+            <img src="/discover-ziua-1/m/BGD_0241-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0241-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(14)">
             <a href="/discover-ziua-1/f/BGD_0241-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0243.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0243.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(16)">
+            <img src="/discover-ziua-1/m/BGD_0243.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0243.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(15)">
             <a href="/discover-ziua-1/f/BGD_0243.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0246-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0246-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(17)">
+            <img src="/discover-ziua-1/m/BGD_0246-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0246-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(16)">
             <a href="/discover-ziua-1/f/BGD_0246-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0248-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0248-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(18)">
+            <img src="/discover-ziua-1/m/BGD_0248-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0248-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(17)">
             <a href="/discover-ziua-1/f/BGD_0248-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0270.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0270.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(19)">
+            <img src="/discover-ziua-1/m/BGD_0270.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0270.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(18)">
             <a href="/discover-ziua-1/f/BGD_0270.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0276-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0276-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(20)">
+            <img src="/discover-ziua-1/m/BGD_0276-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0276-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(19)">
             <a href="/discover-ziua-1/f/BGD_0276-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0279.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0279.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(21)">
+            <img src="/discover-ziua-1/m/BGD_0279.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0279.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(20)">
             <a href="/discover-ziua-1/f/BGD_0279.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0284.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0284.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(22)">
+            <img src="/discover-ziua-1/m/BGD_0284.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0284.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(21)">
             <a href="/discover-ziua-1/f/BGD_0284.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div>
         <div class="gal-item hover-target" style="position:relative; display:inline-block; margin-bottom:16px;">
-            <img src="/discover-ziua-1/m/BGD_0268-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0268-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(23)">
+            <img src="/discover-ziua-1/m/BGD_0268-2.jpg" onerror="this.onerror=null;this.src='/discover-ziua-1/f/BGD_0268-2.jpg'" alt="" loading="lazy" decoding="async" onclick="openArhivaLb(22)">
             <a href="/discover-ziua-1/f/BGD_0268-2.jpg" download target="_blank" rel="noopener" class="arhiva-dl-overlay" title="Descarcă poza" onclick="event.stopPropagation()" style="position:absolute; bottom:12px; right:12px; width:44px; height:44px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:10; pointer-events:auto; text-decoration:none; backdrop-filter:blur(4px);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
         </div></div></div>
             </div>
+            <footer class="global-footer"></footer>
         </section>
         
         <!-- DEAD SIMPLE BULLETPROOF LIGHTBOX -->
@@ -4060,7 +4059,7 @@
         </div>
         
         <script>
-        const ARHIVA_PHOTOS = [{"m": "/discover-ziua-1/m/BGD_0251-2.jpg", "f": "/discover-ziua-1/f/BGD_0251-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0253-2.jpg", "f": "/discover-ziua-1/f/BGD_0253-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0254-2.jpg", "f": "/discover-ziua-1/f/BGD_0254-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0263-2.jpg", "f": "/discover-ziua-1/f/BGD_0263-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0265-2.jpg", "f": "/discover-ziua-1/f/BGD_0265-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0266-2.jpg", "f": "/discover-ziua-1/f/BGD_0266-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0267-2.jpg", "f": "/discover-ziua-1/f/BGD_0267-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0225.jpg", "f": "/discover-ziua-1/f/BGD_0225.jpg"}, {"m": "/discover-ziua-1/m/BGD_0227.jpg", "f": "/discover-ziua-1/f/BGD_0227.jpg"}, {"m": "/discover-ziua-1/m/BGD_0228.jpg", "f": "/discover-ziua-1/f/BGD_0228.jpg"}, {"m": "/discover-ziua-1/m/BGD_0229.jpg", "f": "/discover-ziua-1/f/BGD_0229.jpg"}, {"m": "/discover-ziua-1/m/BGD_0231-2.jpg", "f": "/discover-ziua-1/f/BGD_0231-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0234-2.jpg", "f": "/discover-ziua-1/f/BGD_0234-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0237.jpg", "f": "/discover-ziua-1/f/BGD_0237.jpg"}, {"m": "/discover-ziua-1/m/BGD_0240-2.jpg", "f": "/discover-ziua-1/f/BGD_0240-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0241-2.jpg", "f": "/discover-ziua-1/f/BGD_0241-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0243.jpg", "f": "/discover-ziua-1/f/BGD_0243.jpg"}, {"m": "/discover-ziua-1/m/BGD_0246-2.jpg", "f": "/discover-ziua-1/f/BGD_0246-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0248-2.jpg", "f": "/discover-ziua-1/f/BGD_0248-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0270.jpg", "f": "/discover-ziua-1/f/BGD_0270.jpg"}, {"m": "/discover-ziua-1/m/BGD_0276-2.jpg", "f": "/discover-ziua-1/f/BGD_0276-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0279.jpg", "f": "/discover-ziua-1/f/BGD_0279.jpg"}, {"m": "/discover-ziua-1/m/BGD_0284.jpg", "f": "/discover-ziua-1/f/BGD_0284.jpg"}, {"m": "/discover-ziua-1/m/BGD_0268-2.jpg", "f": "/discover-ziua-1/f/BGD_0268-2.jpg"}];
+        const ARHIVA_PHOTOS = [{"m": "/discover-ziua-1/m/BGD_0251-2.jpg", "f": "/discover-ziua-1/f/BGD_0251-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0253-2.jpg", "f": "/discover-ziua-1/f/BGD_0253-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0263-2.jpg", "f": "/discover-ziua-1/f/BGD_0263-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0265-2.jpg", "f": "/discover-ziua-1/f/BGD_0265-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0266-2.jpg", "f": "/discover-ziua-1/f/BGD_0266-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0267-2.jpg", "f": "/discover-ziua-1/f/BGD_0267-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0225.jpg", "f": "/discover-ziua-1/f/BGD_0225.jpg"}, {"m": "/discover-ziua-1/m/BGD_0227.jpg", "f": "/discover-ziua-1/f/BGD_0227.jpg"}, {"m": "/discover-ziua-1/m/BGD_0228.jpg", "f": "/discover-ziua-1/f/BGD_0228.jpg"}, {"m": "/discover-ziua-1/m/BGD_0229.jpg", "f": "/discover-ziua-1/f/BGD_0229.jpg"}, {"m": "/discover-ziua-1/m/BGD_0231-2.jpg", "f": "/discover-ziua-1/f/BGD_0231-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0234-2.jpg", "f": "/discover-ziua-1/f/BGD_0234-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0237.jpg", "f": "/discover-ziua-1/f/BGD_0237.jpg"}, {"m": "/discover-ziua-1/m/BGD_0240-2.jpg", "f": "/discover-ziua-1/f/BGD_0240-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0241-2.jpg", "f": "/discover-ziua-1/f/BGD_0241-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0243.jpg", "f": "/discover-ziua-1/f/BGD_0243.jpg"}, {"m": "/discover-ziua-1/m/BGD_0246-2.jpg", "f": "/discover-ziua-1/f/BGD_0246-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0248-2.jpg", "f": "/discover-ziua-1/f/BGD_0248-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0270.jpg", "f": "/discover-ziua-1/f/BGD_0270.jpg"}, {"m": "/discover-ziua-1/m/BGD_0276-2.jpg", "f": "/discover-ziua-1/f/BGD_0276-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0279.jpg", "f": "/discover-ziua-1/f/BGD_0279.jpg"}, {"m": "/discover-ziua-1/m/BGD_0284.jpg", "f": "/discover-ziua-1/f/BGD_0284.jpg"}, {"m": "/discover-ziua-1/m/BGD_0268-2.jpg", "f": "/discover-ziua-1/f/BGD_0268-2.jpg"}];
         let arhivaCur = 0;
         const alb = document.getElementById('arhiva-lb');
         const albImg = document.getElementById('arhiva-lb-img');
