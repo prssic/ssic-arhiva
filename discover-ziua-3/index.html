@@ -4778,25 +4778,8 @@ html, body { background-color: var(--c-base); }
           function getUrl(i){ return imgs[i].dataset.full || imgs[i].src; }
           function show(i){
             cur = (i + imgs.length) % imgs.length;
-            var thumb = imgs[cur].src;
-            var full = getUrl(cur);
-            
-            // Afiseaza INSTANT varianta mica, deja descarcata in grid
-            albImg.dataset.idx = cur;
-            albImg.src = thumb;
-            
-            // Incarca pe fundal varianta uriasa si inlocuieste-o doar cand e gata
-            if(full !== thumb) {
-                var hq = new Image();
-                hq.onload = function() {
-                    if (parseInt(albImg.dataset.idx) === cur) {
-                        albImg.src = full;
-                    }
-                };
-                hq.src = full;
-            }
-            
-            albDl.href = full;
+            albImg.src = ''; albImg.src = getUrl(cur);
+            albDl.href = getUrl(cur);
             alb.classList.add('on');
             document.body.style.overflow = 'hidden';
           }
