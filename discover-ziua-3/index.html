@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Discover SSIC - ZIua 3 | Arhiva SSIC</title>
-    <meta name="description" content="Poze realizate în cadrul Discover SSIC - TRIVIA NIGHT Music Culture SSIC x LSFSA x YAIMM">
+    <meta name="description" content="Poze realizate în cadrul Discover SSIC - TRIVIA NIGHT Music Culture SSIC x [LSFSA](https://www.instagram.com/lsfsa.bucuresti/) x [YAIMM](https://www.instagram.com/youthinactionimm/).">
     <link rel="canonical" href="">
     
     <!-- Favicon -->
@@ -13,7 +13,7 @@
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Discover SSIC - ZIua 3 | Arhiva SSIC">
-    <meta property="og:description" content="Poze realizate în cadrul Discover SSIC - TRIVIA NIGHT Music Culture SSIC x LSFSA x YAIMM.">
+    <meta property="og:description" content="Poze realizate în cadrul Discover SSIC - TRIVIA NIGHT Music Culture SSIC x [LSFSA](https://www.instagram.com/lsfsa.bucuresti/) x [YAIMM](https://www.instagram.com/youthinactionimm/).">
     <meta property="og:image" content="https://ssic.ro/assets/logo/banner.png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
@@ -2818,21 +2818,25 @@
 <link rel="stylesheet" href="/assets/style.css">
     <style>html, body { overflow-y: auto !important; height: auto !important; overflow-x: hidden; } html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; } body { -ms-overflow-style: none; scrollbar-width: none; } .view { position: relative !important; height: auto !important; overflow: visible !important; }</style>
 <style id="arhiva-gallery-fix">
-/* FIX: grila de fundal (.app) trebuie să acopere toată înălțimea paginii, inclusiv footerul */
+/* Ensure background covers full page including footer */
 html, body { background-color: var(--c-base); }
 .app { background-attachment: scroll !important; min-height: 100vh; }
 .app .global-footer { position: relative; z-index: 1; }
-/* FIX: .gal-item din site are ::before cu padding-top = var(--aspect) (nedefinit aici => înălțime 0),
-   iar img e position:absolute => pozele erau invizibile. Aici pozele își au propria înălțime. */
-.gallery-grid { columns: auto !important; column-count: 1 !important; column-gap: 20px !important; margin-top: 24px; }
+/* Fix .gal-item: remove aspect-ratio trick (::before with --aspect), make images natural height */
+.gallery-grid { columns: auto !important; column-count: 1 !important; column-gap: 16px !important; margin-top: 20px; }
 @media (min-width: 600px)  { .gallery-grid { column-count: 2 !important; } }
-@media (min-width: 1100px) { .gallery-grid { column-count: 3 !important; column-gap: 24px !important; } }
-.gallery-grid .gal-item { display: block !important; margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; }
-.gallery-grid .gal-item::before, .gallery-grid .gal-item::after { display: none !important; }
-.gallery-grid .gal-item img { position: static !important; display: block; width: 100%; height: auto; min-height: 120px; object-fit: cover; cursor: pointer; border-radius: inherit; }
-.arhiva-dl-overlay { opacity: 0; transition: opacity .2s; }
-.gal-item:hover .arhiva-dl-overlay { opacity: 1; }
-@media (hover: none) { .arhiva-dl-overlay { opacity: 1; } }
+@media (min-width: 1100px) { .gallery-grid { column-count: 3 !important; column-gap: 20px !important; } }
+.gallery-grid .gal-item { display: block !important; margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; border-radius: 12px; overflow: hidden; }
+.gallery-grid .gal-item::before { display: none !important; }
+.gallery-grid .gal-item::after { display: none !important; }
+.gallery-grid .gal-item img { position: static !important; display: block; width: 100%; height: auto; min-height: 80px; object-fit: cover; cursor: pointer; border-radius: 0; }
+/* Download overlay: show on hover, always on touch */
+.arhiva-dl-overlay { opacity: 0 !important; transition: opacity .2s; }
+.gal-item:hover .arhiva-dl-overlay { opacity: 1 !important; }
+@media (hover: none) { .arhiva-dl-overlay { opacity: 1 !important; } }
+/* Hide the native lb-dots (carousel dots) on archive pages */
+.lb-dots { display: none !important; }
+.lb-foot { display: none !important; }
 </style>
 </head>
 <body>
@@ -3880,7 +3884,7 @@ html, body { background-color: var(--c-base); }
                     <p style="font-size:1.15rem;margin-bottom:30px;max-width:700px;line-height:1.6;">Poze realizate în cadrul Discover SSIC - TRIVIA NIGHT Music Culture SSIC x [LSFSA](https://www.instagram.com/lsfsa.bucuresti/) x [YAIMM](https://www.instagram.com/youthinactionimm/).</p>
                     <div class="gallery-grid">
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7400.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7400.jpg" data-full="/discover-ziua-3/f/DSC_7400.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7400.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3891,7 +3895,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7409.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7409.jpg" data-full="/discover-ziua-3/f/DSC_7409.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7409.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3902,7 +3906,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7411.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7411.jpg" data-full="/discover-ziua-3/f/DSC_7411.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7411.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3913,7 +3917,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7419.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7419.jpg" data-full="/discover-ziua-3/f/DSC_7419.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7419.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3924,7 +3928,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7420.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7420.jpg" data-full="/discover-ziua-3/f/DSC_7420.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7420.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3935,7 +3939,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/story_1.jpg" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/story_1.jpg" data-full="/discover-ziua-3/f/story_1.jpg" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/story_1.jpg" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3946,7 +3950,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/story_2.jpg" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/story_2.jpg" data-full="/discover-ziua-3/f/story_2.jpg" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/story_2.jpg" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3957,7 +3961,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_6977.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_6977.jpg" data-full="/discover-ziua-3/f/DSC_6977.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_6977.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3968,7 +3972,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_6981.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_6981.jpg" data-full="/discover-ziua-3/f/DSC_6981.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_6981.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3979,7 +3983,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_6982.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_6982.jpg" data-full="/discover-ziua-3/f/DSC_6982.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_6982.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -3990,7 +3994,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_6992.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_6992.jpg" data-full="/discover-ziua-3/f/DSC_6992.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_6992.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4001,7 +4005,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_6995.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_6995.jpg" data-full="/discover-ziua-3/f/DSC_6995.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_6995.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4012,7 +4016,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_6998.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_6998.jpg" data-full="/discover-ziua-3/f/DSC_6998.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_6998.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4023,7 +4027,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7000.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7000.jpg" data-full="/discover-ziua-3/f/DSC_7000.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7000.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4034,7 +4038,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7002.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7002.jpg" data-full="/discover-ziua-3/f/DSC_7002.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7002.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4045,7 +4049,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7003.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7003.jpg" data-full="/discover-ziua-3/f/DSC_7003.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7003.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4056,7 +4060,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7004.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7004.jpg" data-full="/discover-ziua-3/f/DSC_7004.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7004.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4067,7 +4071,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7013.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7013.jpg" data-full="/discover-ziua-3/f/DSC_7013.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7013.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4078,7 +4082,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7015.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7015.jpg" data-full="/discover-ziua-3/f/DSC_7015.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7015.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4089,7 +4093,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7018.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7018.jpg" data-full="/discover-ziua-3/f/DSC_7018.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7018.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4100,7 +4104,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7029.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7029.jpg" data-full="/discover-ziua-3/f/DSC_7029.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7029.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4111,7 +4115,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7032.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7032.jpg" data-full="/discover-ziua-3/f/DSC_7032.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7032.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4122,7 +4126,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7036.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7036.jpg" data-full="/discover-ziua-3/f/DSC_7036.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7036.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4133,7 +4137,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7040.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7040.jpg" data-full="/discover-ziua-3/f/DSC_7040.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7040.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4144,7 +4148,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7043.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7043.jpg" data-full="/discover-ziua-3/f/DSC_7043.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7043.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4155,7 +4159,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7048.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7048.jpg" data-full="/discover-ziua-3/f/DSC_7048.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7048.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4166,7 +4170,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7065.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7065.jpg" data-full="/discover-ziua-3/f/DSC_7065.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7065.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4177,7 +4181,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7098.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7098.jpg" data-full="/discover-ziua-3/f/DSC_7098.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7098.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4188,7 +4192,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7099.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7099.jpg" data-full="/discover-ziua-3/f/DSC_7099.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7099.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4199,7 +4203,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7100.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7100.jpg" data-full="/discover-ziua-3/f/DSC_7100.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7100.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4210,7 +4214,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7101.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7101.jpg" data-full="/discover-ziua-3/f/DSC_7101.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7101.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4221,7 +4225,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7106.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7106.jpg" data-full="/discover-ziua-3/f/DSC_7106.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7106.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4232,7 +4236,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7122.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7122.jpg" data-full="/discover-ziua-3/f/DSC_7122.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7122.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4243,7 +4247,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7124.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7124.jpg" data-full="/discover-ziua-3/f/DSC_7124.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7124.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4254,7 +4258,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7146.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7146.jpg" data-full="/discover-ziua-3/f/DSC_7146.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7146.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4265,7 +4269,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7152.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7152.jpg" data-full="/discover-ziua-3/f/DSC_7152.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7152.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4276,7 +4280,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7162.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7162.jpg" data-full="/discover-ziua-3/f/DSC_7162.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7162.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4287,7 +4291,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7177.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7177.jpg" data-full="/discover-ziua-3/f/DSC_7177.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7177.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4298,7 +4302,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7186.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7186.jpg" data-full="/discover-ziua-3/f/DSC_7186.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7186.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4309,7 +4313,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7187.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7187.jpg" data-full="/discover-ziua-3/f/DSC_7187.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7187.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4320,7 +4324,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7193.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7193.jpg" data-full="/discover-ziua-3/f/DSC_7193.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7193.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4331,7 +4335,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7204.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7204.jpg" data-full="/discover-ziua-3/f/DSC_7204.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7204.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4342,7 +4346,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7209.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7209.jpg" data-full="/discover-ziua-3/f/DSC_7209.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7209.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4353,7 +4357,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7210.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7210.jpg" data-full="/discover-ziua-3/f/DSC_7210.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7210.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4364,7 +4368,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7216.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7216.jpg" data-full="/discover-ziua-3/f/DSC_7216.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7216.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4375,7 +4379,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7219.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7219.jpg" data-full="/discover-ziua-3/f/DSC_7219.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7219.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4386,7 +4390,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7226.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7226.jpg" data-full="/discover-ziua-3/f/DSC_7226.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7226.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4397,7 +4401,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7228.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7228.jpg" data-full="/discover-ziua-3/f/DSC_7228.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7228.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4408,7 +4412,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7231.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7231.jpg" data-full="/discover-ziua-3/f/DSC_7231.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7231.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4419,7 +4423,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7233.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7233.jpg" data-full="/discover-ziua-3/f/DSC_7233.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7233.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4430,7 +4434,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7234.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7234.jpg" data-full="/discover-ziua-3/f/DSC_7234.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7234.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4441,7 +4445,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7237.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7237.jpg" data-full="/discover-ziua-3/f/DSC_7237.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7237.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4452,7 +4456,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7247.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7247.jpg" data-full="/discover-ziua-3/f/DSC_7247.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7247.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4463,7 +4467,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7251.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7251.jpg" data-full="/discover-ziua-3/f/DSC_7251.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7251.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4474,7 +4478,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7259.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7259.jpg" data-full="/discover-ziua-3/f/DSC_7259.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7259.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4485,7 +4489,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7261.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7261.jpg" data-full="/discover-ziua-3/f/DSC_7261.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7261.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4496,7 +4500,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7262.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7262.jpg" data-full="/discover-ziua-3/f/DSC_7262.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7262.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4507,7 +4511,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7264.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7264.jpg" data-full="/discover-ziua-3/f/DSC_7264.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7264.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4518,7 +4522,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7265.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7265.jpg" data-full="/discover-ziua-3/f/DSC_7265.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7265.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4529,7 +4533,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7267.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7267.jpg" data-full="/discover-ziua-3/f/DSC_7267.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7267.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4540,7 +4544,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7269.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7269.jpg" data-full="/discover-ziua-3/f/DSC_7269.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7269.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4551,7 +4555,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7273.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7273.jpg" data-full="/discover-ziua-3/f/DSC_7273.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7273.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4562,7 +4566,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7274.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7274.jpg" data-full="/discover-ziua-3/f/DSC_7274.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7274.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4573,7 +4577,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7280.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7280.jpg" data-full="/discover-ziua-3/f/DSC_7280.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7280.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4584,7 +4588,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7283.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7283.jpg" data-full="/discover-ziua-3/f/DSC_7283.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7283.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4595,7 +4599,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7288.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7288.jpg" data-full="/discover-ziua-3/f/DSC_7288.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7288.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4606,7 +4610,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7302.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7302.jpg" data-full="/discover-ziua-3/f/DSC_7302.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7302.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4617,7 +4621,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7303.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7303.jpg" data-full="/discover-ziua-3/f/DSC_7303.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7303.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4628,7 +4632,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7320.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7320.jpg" data-full="/discover-ziua-3/f/DSC_7320.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7320.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4639,7 +4643,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7321.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7321.jpg" data-full="/discover-ziua-3/f/DSC_7321.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7321.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4650,7 +4654,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7323.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7323.jpg" data-full="/discover-ziua-3/f/DSC_7323.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7323.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4661,7 +4665,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7332.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7332.jpg" data-full="/discover-ziua-3/f/DSC_7332.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7332.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4672,7 +4676,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7336.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7336.jpg" data-full="/discover-ziua-3/f/DSC_7336.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7336.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4683,7 +4687,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7340.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7340.jpg" data-full="/discover-ziua-3/f/DSC_7340.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7340.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4694,7 +4698,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7341.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7341.jpg" data-full="/discover-ziua-3/f/DSC_7341.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7341.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4705,7 +4709,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7343.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7343.jpg" data-full="/discover-ziua-3/f/DSC_7343.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7343.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4716,7 +4720,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7344.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7344.jpg" data-full="/discover-ziua-3/f/DSC_7344.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7344.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4727,7 +4731,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7346.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7346.jpg" data-full="/discover-ziua-3/f/DSC_7346.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7346.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4738,7 +4742,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7348.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7348.jpg" data-full="/discover-ziua-3/f/DSC_7348.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7348.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4749,7 +4753,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7349.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7349.jpg" data-full="/discover-ziua-3/f/DSC_7349.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7349.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4760,7 +4764,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7356.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7356.jpg" data-full="/discover-ziua-3/f/DSC_7356.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7356.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4771,7 +4775,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7358.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7358.jpg" data-full="/discover-ziua-3/f/DSC_7358.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7358.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4782,7 +4786,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7359.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7359.jpg" data-full="/discover-ziua-3/f/DSC_7359.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7359.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4793,7 +4797,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7367.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7367.jpg" data-full="/discover-ziua-3/f/DSC_7367.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7367.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4804,7 +4808,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7369.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7369.jpg" data-full="/discover-ziua-3/f/DSC_7369.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7369.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4815,7 +4819,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7374.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7374.jpg" data-full="/discover-ziua-3/f/DSC_7374.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7374.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4826,7 +4830,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7383.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7383.jpg" data-full="/discover-ziua-3/f/DSC_7383.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7383.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4837,7 +4841,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7388.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7388.jpg" data-full="/discover-ziua-3/f/DSC_7388.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7388.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4848,7 +4852,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7391.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7391.jpg" data-full="/discover-ziua-3/f/DSC_7391.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7391.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4859,7 +4863,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7393.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7393.jpg" data-full="/discover-ziua-3/f/DSC_7393.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7393.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4870,7 +4874,7 @@ html, body { background-color: var(--c-base); }
         </div>
 
         <div class="gal-item hover-target" style="position:relative; display:block; margin-bottom:16px; break-inside:avoid; -webkit-column-break-inside:avoid;">
-            <img src="/discover-ziua-3/f/DSC_7399.JPG" alt="" loading="lazy">
+            <img src="/discover-ziua-3/t/DSC_7399.jpg" data-full="/discover-ziua-3/f/DSC_7399.JPG" alt="" loading="lazy">
             <a href="/discover-ziua-3/f/DSC_7399.JPG" download target="_blank" rel="noopener"
                class="arhiva-dl-overlay"
                title="Descarca poza"
@@ -4930,86 +4934,66 @@ html, body { background-color: var(--c-base); }
 </div>
 </footer>
         </section>
-        
-        <!-- DEAD SIMPLE BULLETPROOF LIGHTBOX -->
         <style>
-            #arhiva-lb { position: fixed; inset: 0; z-index: 999999; background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center; flex-direction: column; touch-action: none; }
-            #arhiva-lb.show { display: flex; }
-            #arhiva-lb-close { position: absolute; top: max(20px, env(safe-area-inset-top, 20px)); right: max(20px, env(safe-area-inset-right, 20px)); width: 44px; height: 44px; background: rgba(255,255,255,0.15); color: #fff; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; backdrop-filter: blur(4px); padding: 0; }
-            #arhiva-lb-close:active { background: rgba(255,255,255,0.3); }
-            
-            #arhiva-lb-stage { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0; }
-            #arhiva-lb-img { max-width: 100%; max-height: 100%; object-fit: contain; user-select: none; -webkit-user-select: none; }
-            
-            #arhiva-lb-dl { position: absolute; bottom: max(30px, env(safe-area-inset-bottom, 30px)); right: max(20px, env(safe-area-inset-right, 20px)); width: 50px; height: 50px; background: var(--c-accent, #f5b027); color: #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-            #arhiva-lb-dl:active { transform: scale(0.95); }
-            
-            .arhiva-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: rgba(255,255,255,0.1); color: #fff; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; backdrop-filter: blur(4px); padding: 0; }
-            .arhiva-nav-btn:active { background: rgba(255,255,255,0.2); }
-            #arhiva-lb-prev { left: max(10px, env(safe-area-inset-left, 10px)); }
-            #arhiva-lb-next { right: max(10px, env(safe-area-inset-right, 10px)); }
+        #alb{position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,0.96);display:none;align-items:center;justify-content:center;touch-action:none}
+        #alb.on{display:flex}
+        #alb-close,#alb-prev,#alb-next{position:absolute;width:48px;height:48px;background:rgba(255,255,255,0.12);border:none;border-radius:10px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:2}
+        #alb-close{top:max(16px,env(safe-area-inset-top,16px));right:max(16px,env(safe-area-inset-right,16px))}
+        #alb-prev{left:max(12px,env(safe-area-inset-left,12px));top:50%;transform:translateY(-50%)}
+        #alb-next{right:max(12px,env(safe-area-inset-right,12px));top:50%;transform:translateY(-50%)}
+        #alb-close:hover,#alb-prev:hover,#alb-next:hover{background:rgba(255,255,255,0.22)}
+        #alb-img{max-width:calc(100vw - 120px);max-height:calc(100vh - 40px);object-fit:contain;border-radius:8px;display:block}
+        @media(max-width:600px){#alb-img{max-width:100vw;max-height:100vh;border-radius:0}}
+        #alb-dl{position:absolute;bottom:max(24px,env(safe-area-inset-bottom,24px));right:max(16px,env(safe-area-inset-right,16px));width:48px;height:48px;background:var(--c-accent,#f5b027);color:#111;border-radius:10px;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:2;box-shadow:0 4px 12px rgba(0,0,0,0.4)}
+        #alb-dl:active{transform:scale(0.93)}
         </style>
-        
-        <div id="arhiva-lb">
-            <button id="arhiva-lb-close" onclick="closeArhivaLb()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-            <button class="arhiva-nav-btn" id="arhiva-lb-prev" onclick="moveArhivaLb(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <button class="arhiva-nav-btn" id="arhiva-lb-next" onclick="moveArhivaLb(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-            
-            <div id="arhiva-lb-stage">
-                <img id="arhiva-lb-img" src="" alt="">
-                <a id="arhiva-lb-dl" href="#" download>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                </a>
-            </div>
+        <div id="alb">
+          <button id="alb-close" aria-label="Inchide"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <button id="alb-prev" aria-label="Inapoi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <img id="alb-img" src="" alt="">
+          <button id="alb-next" aria-label="Inainte"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <a id="alb-dl" href="#" download title="Descarca"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
         </div>
-        
         <script>
-        const ARHIVA_PHOTOS = [{"m": "/discover-ziua-1/m/BGD_0251-2.jpg", "f": "/discover-ziua-1/f/BGD_0251-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0253-2.jpg", "f": "/discover-ziua-1/f/BGD_0253-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0263-2.jpg", "f": "/discover-ziua-1/f/BGD_0263-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0265-2.jpg", "f": "/discover-ziua-1/f/BGD_0265-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0266-2.jpg", "f": "/discover-ziua-1/f/BGD_0266-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0267-2.jpg", "f": "/discover-ziua-1/f/BGD_0267-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0225.jpg", "f": "/discover-ziua-1/f/BGD_0225.jpg"}, {"m": "/discover-ziua-1/m/BGD_0227.jpg", "f": "/discover-ziua-1/f/BGD_0227.jpg"}, {"m": "/discover-ziua-1/m/BGD_0228.jpg", "f": "/discover-ziua-1/f/BGD_0228.jpg"}, {"m": "/discover-ziua-1/m/BGD_0229.jpg", "f": "/discover-ziua-1/f/BGD_0229.jpg"}, {"m": "/discover-ziua-1/m/BGD_0231-2.jpg", "f": "/discover-ziua-1/f/BGD_0231-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0234-2.jpg", "f": "/discover-ziua-1/f/BGD_0234-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0237.jpg", "f": "/discover-ziua-1/f/BGD_0237.jpg"}, {"m": "/discover-ziua-1/m/BGD_0240-2.jpg", "f": "/discover-ziua-1/f/BGD_0240-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0241-2.jpg", "f": "/discover-ziua-1/f/BGD_0241-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0243.jpg", "f": "/discover-ziua-1/f/BGD_0243.jpg"}, {"m": "/discover-ziua-1/m/BGD_0246-2.jpg", "f": "/discover-ziua-1/f/BGD_0246-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0248-2.jpg", "f": "/discover-ziua-1/f/BGD_0248-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0270.jpg", "f": "/discover-ziua-1/f/BGD_0270.jpg"}, {"m": "/discover-ziua-1/m/BGD_0276-2.jpg", "f": "/discover-ziua-1/f/BGD_0276-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0279.jpg", "f": "/discover-ziua-1/f/BGD_0279.jpg"}, {"m": "/discover-ziua-1/m/BGD_0284.jpg", "f": "/discover-ziua-1/f/BGD_0284.jpg"}, {"m": "/discover-ziua-1/m/BGD_0268-2.jpg", "f": "/discover-ziua-1/f/BGD_0268-2.jpg"}];
-        let arhivaCur = 0;
-        const alb = document.getElementById('arhiva-lb');
-        const albImg = document.getElementById('arhiva-lb-img');
-        const albDl = document.getElementById('arhiva-lb-dl');
-        
-        window.openArhivaLb = function(i) {
-            arhivaCur = i;
-            alb.classList.add('show');
+        (function(){
+          var imgs = Array.from(document.querySelectorAll('.gallery-grid .gal-item img'));
+          var alb = document.getElementById('alb');
+          var albImg = document.getElementById('alb-img');
+          var albDl = document.getElementById('alb-dl');
+          var cur = 0;
+          function getUrl(i){ return imgs[i].dataset.full || imgs[i].src; }
+          function show(i){
+            cur = (i + imgs.length) % imgs.length;
+            albImg.src = ''; albImg.src = getUrl(cur);
+            albDl.href = getUrl(cur);
+            alb.classList.add('on');
             document.body.style.overflow = 'hidden';
-            updateArhivaLb();
-        };
-        
-        window.closeArhivaLb = function() {
-            alb.classList.remove('show');
+          }
+          function close(){
+            alb.classList.remove('on');
             document.body.style.overflow = '';
-        };
-        
-        window.moveArhivaLb = function(d) {
-            arhivaCur = (arhivaCur + d + ARHIVA_PHOTOS.length) % ARHIVA_PHOTOS.length;
-            updateArhivaLb();
-        };
-        
-        function updateArhivaLb() {
-            albImg.src = ARHIVA_PHOTOS[arhivaCur].f;
-            albDl.href = ARHIVA_PHOTOS[arhivaCur].f;
-        }
-        
-        alb.addEventListener('click', e => {
-            if (e.target === alb || e.target.id === 'arhiva-lb-stage') closeArhivaLb();
-        });
-        
-        // Simple swipe support
-        let tx = 0;
-        alb.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, {passive: true});
-        alb.addEventListener('touchend', e => {
-            let dx = e.changedTouches[0].screenX - tx;
-            if (dx > 50) moveArhivaLb(-1);
-            else if (dx < -50) moveArhivaLb(1);
-        }, {passive: true});
+          }
+          imgs.forEach(function(img, i){
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function(){ show(i); });
+          });
+          document.getElementById('alb-close').onclick = close;
+          document.getElementById('alb-prev').onclick = function(){ show(cur - 1); };
+          document.getElementById('alb-next').onclick = function(){ show(cur + 1); };
+          alb.addEventListener('click', function(e){ if(e.target === alb) close(); });
+          document.addEventListener('keydown', function(e){
+            if(!alb.classList.contains('on')) return;
+            if(e.key==='Escape') close();
+            else if(e.key==='ArrowRight') show(cur+1);
+            else if(e.key==='ArrowLeft') show(cur-1);
+          });
+          var tx=0;
+          alb.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX;},{passive:true});
+          alb.addEventListener('touchend',function(e){
+            var dx=e.changedTouches[0].screenX-tx;
+            if(dx>50) show(cur-1); else if(dx<-50) show(cur+1);
+          },{passive:true});
+        })();
         </script>
     
     </main>

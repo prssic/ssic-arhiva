@@ -2818,21 +2818,25 @@
 <link rel="stylesheet" href="/assets/style.css">
     <style>html, body { overflow-y: auto !important; height: auto !important; overflow-x: hidden; } html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; } body { -ms-overflow-style: none; scrollbar-width: none; } .view { position: relative !important; height: auto !important; overflow: visible !important; }</style>
 <style id="arhiva-gallery-fix">
-/* FIX: grila de fundal (.app) trebuie să acopere toată înălțimea paginii, inclusiv footerul */
+/* Ensure background covers full page including footer */
 html, body { background-color: var(--c-base); }
 .app { background-attachment: scroll !important; min-height: 100vh; }
 .app .global-footer { position: relative; z-index: 1; }
-/* FIX: .gal-item din site are ::before cu padding-top = var(--aspect) (nedefinit aici => înălțime 0),
-   iar img e position:absolute => pozele erau invizibile. Aici pozele își au propria înălțime. */
-.gallery-grid { columns: auto !important; column-count: 1 !important; column-gap: 20px !important; margin-top: 24px; }
+/* Fix .gal-item: remove aspect-ratio trick (::before with --aspect), make images natural height */
+.gallery-grid { columns: auto !important; column-count: 1 !important; column-gap: 16px !important; margin-top: 20px; }
 @media (min-width: 600px)  { .gallery-grid { column-count: 2 !important; } }
-@media (min-width: 1100px) { .gallery-grid { column-count: 3 !important; column-gap: 24px !important; } }
-.gallery-grid .gal-item { display: block !important; margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; }
-.gallery-grid .gal-item::before, .gallery-grid .gal-item::after { display: none !important; }
-.gallery-grid .gal-item img { position: static !important; display: block; width: 100%; height: auto; min-height: 120px; object-fit: cover; cursor: pointer; border-radius: inherit; }
-.arhiva-dl-overlay { opacity: 0; transition: opacity .2s; }
-.gal-item:hover .arhiva-dl-overlay { opacity: 1; }
-@media (hover: none) { .arhiva-dl-overlay { opacity: 1; } }
+@media (min-width: 1100px) { .gallery-grid { column-count: 3 !important; column-gap: 20px !important; } }
+.gallery-grid .gal-item { display: block !important; margin-bottom: 16px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; border-radius: 12px; overflow: hidden; }
+.gallery-grid .gal-item::before { display: none !important; }
+.gallery-grid .gal-item::after { display: none !important; }
+.gallery-grid .gal-item img { position: static !important; display: block; width: 100%; height: auto; min-height: 80px; object-fit: cover; cursor: pointer; border-radius: 0; }
+/* Download overlay: show on hover, always on touch */
+.arhiva-dl-overlay { opacity: 0 !important; transition: opacity .2s; }
+.gal-item:hover .arhiva-dl-overlay { opacity: 1 !important; }
+@media (hover: none) { .arhiva-dl-overlay { opacity: 1 !important; } }
+/* Hide the native lb-dots (carousel dots) on archive pages */
+.lb-dots { display: none !important; }
+.lb-foot { display: none !important; }
 </style>
 </head>
 <body>
@@ -3949,87 +3953,6 @@ html, body { background-color: var(--c-base); }
 </div>
 </footer>
         </section>
-        
-        <!-- DEAD SIMPLE BULLETPROOF LIGHTBOX -->
-        <style>
-            #arhiva-lb { position: fixed; inset: 0; z-index: 999999; background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center; flex-direction: column; touch-action: none; }
-            #arhiva-lb.show { display: flex; }
-            #arhiva-lb-close { position: absolute; top: max(20px, env(safe-area-inset-top, 20px)); right: max(20px, env(safe-area-inset-right, 20px)); width: 44px; height: 44px; background: rgba(255,255,255,0.15); color: #fff; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; backdrop-filter: blur(4px); padding: 0; }
-            #arhiva-lb-close:active { background: rgba(255,255,255,0.3); }
-            
-            #arhiva-lb-stage { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0; }
-            #arhiva-lb-img { max-width: 100%; max-height: 100%; object-fit: contain; user-select: none; -webkit-user-select: none; }
-            
-            #arhiva-lb-dl { position: absolute; bottom: max(30px, env(safe-area-inset-bottom, 30px)); right: max(20px, env(safe-area-inset-right, 20px)); width: 50px; height: 50px; background: var(--c-accent, #f5b027); color: #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-            #arhiva-lb-dl:active { transform: scale(0.95); }
-            
-            .arhiva-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: rgba(255,255,255,0.1); color: #fff; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; backdrop-filter: blur(4px); padding: 0; }
-            .arhiva-nav-btn:active { background: rgba(255,255,255,0.2); }
-            #arhiva-lb-prev { left: max(10px, env(safe-area-inset-left, 10px)); }
-            #arhiva-lb-next { right: max(10px, env(safe-area-inset-right, 10px)); }
-        </style>
-        
-        <div id="arhiva-lb">
-            <button id="arhiva-lb-close" onclick="closeArhivaLb()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-            <button class="arhiva-nav-btn" id="arhiva-lb-prev" onclick="moveArhivaLb(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <button class="arhiva-nav-btn" id="arhiva-lb-next" onclick="moveArhivaLb(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-            
-            <div id="arhiva-lb-stage">
-                <img id="arhiva-lb-img" src="" alt="">
-                <a id="arhiva-lb-dl" href="#" download>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                </a>
-            </div>
-        </div>
-        
-        <script>
-        const ARHIVA_PHOTOS = [{"m": "/discover-ziua-1/m/BGD_0251-2.jpg", "f": "/discover-ziua-1/f/BGD_0251-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0253-2.jpg", "f": "/discover-ziua-1/f/BGD_0253-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0263-2.jpg", "f": "/discover-ziua-1/f/BGD_0263-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0265-2.jpg", "f": "/discover-ziua-1/f/BGD_0265-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0266-2.jpg", "f": "/discover-ziua-1/f/BGD_0266-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0267-2.jpg", "f": "/discover-ziua-1/f/BGD_0267-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0225.jpg", "f": "/discover-ziua-1/f/BGD_0225.jpg"}, {"m": "/discover-ziua-1/m/BGD_0227.jpg", "f": "/discover-ziua-1/f/BGD_0227.jpg"}, {"m": "/discover-ziua-1/m/BGD_0228.jpg", "f": "/discover-ziua-1/f/BGD_0228.jpg"}, {"m": "/discover-ziua-1/m/BGD_0229.jpg", "f": "/discover-ziua-1/f/BGD_0229.jpg"}, {"m": "/discover-ziua-1/m/BGD_0231-2.jpg", "f": "/discover-ziua-1/f/BGD_0231-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0234-2.jpg", "f": "/discover-ziua-1/f/BGD_0234-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0237.jpg", "f": "/discover-ziua-1/f/BGD_0237.jpg"}, {"m": "/discover-ziua-1/m/BGD_0240-2.jpg", "f": "/discover-ziua-1/f/BGD_0240-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0241-2.jpg", "f": "/discover-ziua-1/f/BGD_0241-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0243.jpg", "f": "/discover-ziua-1/f/BGD_0243.jpg"}, {"m": "/discover-ziua-1/m/BGD_0246-2.jpg", "f": "/discover-ziua-1/f/BGD_0246-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0248-2.jpg", "f": "/discover-ziua-1/f/BGD_0248-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0270.jpg", "f": "/discover-ziua-1/f/BGD_0270.jpg"}, {"m": "/discover-ziua-1/m/BGD_0276-2.jpg", "f": "/discover-ziua-1/f/BGD_0276-2.jpg"}, {"m": "/discover-ziua-1/m/BGD_0279.jpg", "f": "/discover-ziua-1/f/BGD_0279.jpg"}, {"m": "/discover-ziua-1/m/BGD_0284.jpg", "f": "/discover-ziua-1/f/BGD_0284.jpg"}, {"m": "/discover-ziua-1/m/BGD_0268-2.jpg", "f": "/discover-ziua-1/f/BGD_0268-2.jpg"}];
-        let arhivaCur = 0;
-        const alb = document.getElementById('arhiva-lb');
-        const albImg = document.getElementById('arhiva-lb-img');
-        const albDl = document.getElementById('arhiva-lb-dl');
-        
-        window.openArhivaLb = function(i) {
-            arhivaCur = i;
-            alb.classList.add('show');
-            document.body.style.overflow = 'hidden';
-            updateArhivaLb();
-        };
-        
-        window.closeArhivaLb = function() {
-            alb.classList.remove('show');
-            document.body.style.overflow = '';
-        };
-        
-        window.moveArhivaLb = function(d) {
-            arhivaCur = (arhivaCur + d + ARHIVA_PHOTOS.length) % ARHIVA_PHOTOS.length;
-            updateArhivaLb();
-        };
-        
-        function updateArhivaLb() {
-            albImg.src = ARHIVA_PHOTOS[arhivaCur].f;
-            albDl.href = ARHIVA_PHOTOS[arhivaCur].f;
-        }
-        
-        alb.addEventListener('click', e => {
-            if (e.target === alb || e.target.id === 'arhiva-lb-stage') closeArhivaLb();
-        });
-        
-        // Simple swipe support
-        let tx = 0;
-        alb.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, {passive: true});
-        alb.addEventListener('touchend', e => {
-            let dx = e.changedTouches[0].screenX - tx;
-            if (dx > 50) moveArhivaLb(-1);
-            else if (dx < -50) moveArhivaLb(1);
-        }, {passive: true});
-        </script>
     
     </main>
 
